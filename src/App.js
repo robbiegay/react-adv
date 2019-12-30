@@ -1,19 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Clock from './Clock';
 
-const user = {
-  firstName: "Robbie",
-  lastName: "Gay"
-}
-
-function formatName(user) {
-  return user.firstName + " " + user.lastName;
+class Controller extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      format: "tic",
+    }
+  }
+  render() {
+    return(
+      <Clock type={this.state.format} />
+    );
+  }
 }
 
 function App() {
   return (
-  <p>Hi my name is {formatName(user)}</p>
+    <Controller />
   );
 }
 
