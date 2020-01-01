@@ -1,23 +1,13 @@
-import React from 'react';
-import Clock from './Clock';
-
-class Controller extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      format: "tic",
-    }
-  }
-  render() {
-    return(
-      <Clock type={this.state.format} />
-    );
-  }
-}
+import React, { useState, useEffect } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
-    <Controller />
+    <>
+      <p>You clicked {count} number of times.</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </>
   );
 }
 
